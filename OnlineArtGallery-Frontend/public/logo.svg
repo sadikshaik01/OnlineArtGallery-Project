@@ -1,0 +1,63 @@
+<svg width="300" height="300" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg">
+
+  <defs>
+    <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFD700"/>
+      <stop offset="40%" stop-color="#E6C200"/>
+      <stop offset="70%" stop-color="#C9A100"/>
+      <stop offset="100%" stop-color="#A67C00"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Enlarged paint palette -->
+  <g transform="scale(1.35) translate(-40 -40)">
+
+    <path d="
+        M170 40
+        C90 40, 40 110, 55 175
+        C70 240, 135 270, 190 260
+        C230 252, 255 220, 245 190
+        C235 160, 205 150, 185 142
+        C165 130, 155 115, 175 95
+        C195 75, 210 60, 200 50
+        C190 40, 180 40, 170 40 Z"
+          fill="none"
+          stroke="url(#goldGrad)"
+          stroke-width="12"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+    />
+
+    <!-- Thumb hole -->
+    <circle cx="205" cy="110" r="22"
+            stroke="url(#goldGrad)"
+            stroke-width="9"
+            fill="none" />
+
+    <!-- Paint spots -->
+    <circle cx="115" cy="150" r="12" fill="url(#goldGrad)" />
+    <circle cx="95" cy="185"  r="11" fill="url(#goldGrad)" />
+    <circle cx="145" cy="200" r="13" fill="url(#goldGrad)" />
+    <circle cx="170" cy="175" r="10" fill="url(#goldGrad)" />
+
+    <!-- Brush stroke -->
+    <path d="M90 230 C140 180, 210 250, 250 165"
+          stroke="url(#goldGrad)"
+          stroke-width="18"
+          stroke-linecap="round"
+          fill="none"
+          opacity="0.95" />
+
+    <!-- Enlarged RED text -->
+    <text x="60%" y="63%" 
+          text-anchor="middle" 
+          fill="red"
+          font-size="85"
+          font-family="Georgia, serif"
+          font-weight="700">
+      OAG
+    </text>
+
+  </g>
+
+</svg>
