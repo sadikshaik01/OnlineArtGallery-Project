@@ -58,13 +58,11 @@ The platform includes protected routes and authentication using **JWT**, with de
 
 ## 🖼️ Screenshots
 
-> *(To be added later — keep your screenshot files inside `frontend/public/` folder)*
+> ![Home Page](OnlineArtGallery-Frontend/public/HomePage.png)
+>
+> ![Artworks Page](OnlineArtGallery-Frontend/public/Artworks.png)
 
-- Home Page  
-- Artwork View  
-- Dashboard  
-- Payment Page  
-- Login / Signup  
+
 
 ---
 
