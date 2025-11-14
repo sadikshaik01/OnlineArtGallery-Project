@@ -75,11 +75,10 @@ Follow these steps to run the project locally 👇
 
 ---
 
-### 1️⃣ Clone the Repository
+### 1️⃣ Project structure
 
 ```bash
-git clone https://github.com/sadikshaik01/OnlineArtGallery-Project.git
-cd OnlineArtGallery-Project
+
 
 OnlineArtGallery-Project/
 │
