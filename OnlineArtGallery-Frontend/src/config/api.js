@@ -1,5 +1,5 @@
 const API_CONFIG = {
-    BASE_URL: 'http://localhost:8082',
+    BASE_URL: 'https://onlineartgallery-project.onrender.com',
     ENDPOINTS: {
         AUTH: {
             LOGIN: '/api/auth/login',
