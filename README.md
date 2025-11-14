@@ -58,7 +58,7 @@ The platform includes protected routes and authentication using **JWT**, with de
 
 ## 🖼️ Screenshots
 
-> ![Home Page](OnlineArtGallery-Frontend/public/Home.png)
+> ![Home Page](OnlineArtGallery-Frontend/public/home.png)
 >
 > ![Artworks Page](OnlineArtGallery-Frontend/public/Artworks.png)
 
