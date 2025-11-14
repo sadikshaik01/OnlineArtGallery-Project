@@ -77,3 +77,20 @@ Follow these steps to run the project locally 👇
 ```bash
 git clone https://github.com/sadikshaik01/OnlineArtGallery-Project.git
 cd OnlineArtGallery-Project
+
+OnlineArtGallery-Project/
+│
+├── OnlineArtGallery-Frontend/                   # React Frontend
+│   ├── public/
+│   ├── src/
+│   ├── package.json
+│   └── vite.config.js
+│
+├── OnlineArtGallery-Backend/                    # Spring Boot Backend
+│   ├── src/main/java/
+│   ├── src/main/resources/
+│   ├── pom.xml
+│   └── Dockerfile (if deployed with Docker)
+│
+└── README.md
+
