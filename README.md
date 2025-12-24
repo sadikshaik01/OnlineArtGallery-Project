@@ -10,16 +10,16 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Frontend-React%20(Vite)-61DAFB?style=for-the-badge&logo=react&logoColor=000000" />
   <img src="https://img.shields.io/badge/Backend-Spring%20Boot-6DB33F?style=for-the-badge&logo=springboot&logoColor=ffffff" />
-  <img src="https://img.shields.io/badge/Database-MySQL%20(Railway)-00758F?style=for-the-badge&logo=mysql&logoColor=ffffff" />
+  <img src="https://img.shields.io/badge/Database-PostgreSQL%20(Supabase)-336791?style=for-the-badge&logo=postgresql&logoColor=ffffff" />
   <img src="https://img.shields.io/badge/Payments-Razorpay-02042B?style=for-the-badge&logo=razorpay&logoColor=ffffff" />
-  <img src="https://img.shields.io/badge/Deployed%20On-Vercel%20%7C%20Render%20%7C%20Railway-000000?style=for-the-badge&logo=vercel&logoColor=ffffff" />
+  <img src="https://img.shields.io/badge/Deployed%20On-Vercel%20%7C%20Render-000000?style=for-the-badge&logo=vercel&logoColor=ffffff" />
 </p>
 
 ---
 
 A complete **Online Art Gallery Platform** built using modern full-stack technologies.  
 Users can explore artworks, view details, and purchase them securely through **Razorpay**.  
-The platform includes protected routes and authentication using **JWT**, with deployment across **Vercel**, **Render**, and **Railway**.
+The platform includes protected routes and authentication using **JWT**, with the backend powered by **Spring Boot** and data stored in **PostgreSQL (Supabase)**.
 
 ---
 
@@ -39,9 +39,9 @@ The platform includes protected routes and authentication using **JWT**, with de
 |-------|------------|
 | **Frontend** | React (Vite), Axios, React Router, Toastify |
 | **Backend** | Spring Boot (REST API), JWT Security |
-| **Database** | MySQL (Hosted on Railway) |
+| **Database** | PostgreSQL (Hosted on Supabase) |
 | **Payment Gateway** | Razorpay |
-| **Deployment** | Frontend → Vercel<br>Backend → Render<br>Database → Railway |
+| **Deployment** | Frontend → Vercel<br>Backend → Render<br>Database → Supabase |
 
 ---
 
@@ -58,14 +58,11 @@ The platform includes protected routes and authentication using **JWT**, with de
 
 ## 🖼️ Screenshots
 
-## Home Page
-
+### Home Page
 > ![Home Page](OnlineArtGallery-Frontend/public/home.png)
->
-## Artworks page
+
+### Artworks Page
 > ![Artworks Page](OnlineArtGallery-Frontend/public/Artworks.png)
-
-
 
 ---
 
@@ -75,11 +72,9 @@ Follow these steps to run the project locally 👇
 
 ---
 
-### 1️⃣ Project structure
+### 1️⃣ Project Structure
 
 ```bash
-
-
 OnlineArtGallery-Project/
 │
 ├── OnlineArtGallery-Frontend/                   # React Frontend
@@ -92,7 +87,6 @@ OnlineArtGallery-Project/
 │   ├── src/main/java/
 │   ├── src/main/resources/
 │   ├── pom.xml
-│   └── Dockerfile (if deployed with Docker)
+│   └── Dockerfile
 │
 └── README.md
-
