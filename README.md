@@ -1,92 +1,155 @@
-<p align="center">
-  <img src="https://img.shields.io/badge/Online%20Art%20Gallery-By%20Shaik%20Sadik-ffffff?style=for-the-badge&logo=canvas&logoColor=000000" alt="Online Art Gallery">
-</p>
+<div align="center">
 
-<h1 align="center">🎨 Online Art Gallery</h1>
-<p align="center">A modern full-stack art gallery platform built by <b>Shaik Sadik</b></p>
+# Online Art Gallery
 
----
+### A clean full-stack art gallery platform for discovering, showcasing, and purchasing artwork.
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Frontend-React%20(Vite)-61DAFB?style=for-the-badge&logo=react&logoColor=000000" />
-  <img src="https://img.shields.io/badge/Backend-Spring%20Boot-6DB33F?style=for-the-badge&logo=springboot&logoColor=ffffff" />
-  <img src="https://img.shields.io/badge/Database-PostgreSQL%20(Supabase)-336791?style=for-the-badge&logo=postgresql&logoColor=ffffff" />
-  <img src="https://img.shields.io/badge/Payments-Razorpay-02042B?style=for-the-badge&logo=razorpay&logoColor=ffffff" />
-  <img src="https://img.shields.io/badge/Deployed%20On-Vercel%20%7C%20Render-000000?style=for-the-badge&logo=vercel&logoColor=ffffff" />
-</p>
+![React](https://img.shields.io/badge/Frontend-React%20%2B%20Vite-202020?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Spring Boot](https://img.shields.io/badge/Backend-Spring%20Boot-202020?style=for-the-badge&logo=springboot&logoColor=6DB33F)
+![Supabase](https://img.shields.io/badge/Database-Supabase%20PostgreSQL-202020?style=for-the-badge&logo=supabase&logoColor=3ECF8E)
+![Razorpay](https://img.shields.io/badge/Payments-Razorpay-202020?style=for-the-badge)
+![Deploy](https://img.shields.io/badge/Deploy-Vercel%20%7C%20Render-202020?style=for-the-badge&logo=vercel&logoColor=ffffff)
+
+</div>
 
 ---
 
-A complete **Online Art Gallery Platform** built using modern full-stack technologies.  
-Users can explore artworks, view details, and purchase them securely through **Razorpay**.  
-The platform includes protected routes and authentication using **JWT**, with the backend powered by **Spring Boot** and data stored in **PostgreSQL (Supabase)**.
+## Overview
+
+Online Art Gallery is a full-stack web application where visitors can explore curated artworks, view details, and purchase pieces through the existing Razorpay payment flow. Artists can manage artwork uploads through protected dashboard pages, while authentication and role-based access are handled by the backend.
+
+The frontend has been refreshed with a softer gallery-inspired design: warm neutral backgrounds, clean cards, polished forms, a refined navbar brand, and responsive layouts that feel calmer and more modern.
 
 ---
 
-## 🌐 Live Demo
+## Live Project
 
-- **Frontend (Vercel):**  
-  👉 https://onlineartgallery.slayercore.me/
-
-- **Backend (Render API):**  
-  👉 https://onlineartgallery-project.onrender.com
+- Frontend: https://onlineartgallery.slayercore.me/
+- Backend API: https://onlineartgallery-project.onrender.com
 
 ---
 
-## 🧰 Tech Stack
-
-| Layer | Technology |
-|-------|------------|
-| **Frontend** | React (Vite), Axios, React Router, Toastify |
-| **Backend** | Spring Boot (REST API), JWT Security |
-| **Database** | PostgreSQL (Hosted on Supabase) |
-| **Payment Gateway** | Razorpay |
-| **Deployment** | Frontend → Vercel<br>Backend → Render<br>Database → Supabase |
-
----
-
-## ✨ Features
-
-- 👤 **User Signup/Login with JWT Authentication**  
-- 🖼 **Browse Artworks**  
-- 🔒 **Protected Routes** (User must login to View / Buy Artwork)  
-- 🛒 **Buy Now with Razorpay Payment Gateway**  
-- 👨‍💼 **Admin Panel – Add, Edit, Delete Artworks**  
-- 📱 **Fully Responsive UI**
-
----
-
-## 🖼️ Screenshots
+## Preview
 
 ### Home Page
-> ![Home Page](OnlineArtGallery-Frontend/public/home.png)
+
+![Online Art Gallery home page](OnlineArtGallery-Frontend/public/home-preview.png)
 
 ### Artworks Page
-> ![Artworks Page](OnlineArtGallery-Frontend/public/Artworks.png)
+
+![Online Art Gallery artworks page](OnlineArtGallery-Frontend/public/artworks-preview.png)
 
 ---
 
-## ⚡ Quick Start (Local Setup)
+## Features
 
-Follow these steps to run the project locally 👇
+- User signup and login with JWT authentication
+- Protected customer and artist routes
+- Browse featured and uploaded artworks
+- View artwork details after login
+- Buy artwork through Razorpay integration
+- Artist dashboard for adding and managing artwork
+- Customer dashboard and profile pages
+- Responsive frontend design for desktop and mobile
 
 ---
 
-### 1️⃣ Project Structure
+## Tech Stack
+
+| Layer | Technology |
+| --- | --- |
+| Frontend | React, Vite, React Router, Bootstrap |
+| Backend | Spring Boot, Spring Security, JWT |
+| Database | PostgreSQL hosted on Supabase |
+| Payments | Razorpay |
+| Deployment | Vercel frontend, Render backend |
+
+---
+
+## Project Structure
+
+```text
+OnlineArtGallery-Project/
+|-- OnlineArtGallery-Frontend/
+|   |-- public/
+|   |   |-- home-preview.png
+|   |   |-- artworks-preview.png
+|   |-- src/
+|   |   |-- components/
+|   |   |-- contexts/
+|   |   |-- pages/
+|   |   |-- styles/
+|   |   |-- utils/
+|   |-- package.json
+|   |-- vite.config.js
+|
+|-- OnlineArtGallery-Backend/
+|   |-- src/main/java/
+|   |-- src/main/resources/
+|   |-- pom.xml
+|   |-- Dockerfile
+|
+|-- README.md
+```
+
+---
+
+## Local Setup
+
+### Frontend
 
 ```bash
-OnlineArtGallery-Project/
-│
-├── OnlineArtGallery-Frontend/                   # React Frontend
-│   ├── public/
-│   ├── src/
-│   ├── package.json
-│   └── vite.config.js
-│
-├── OnlineArtGallery-Backend/                    # Spring Boot Backend
-│   ├── src/main/java/
-│   ├── src/main/resources/
-│   ├── pom.xml
-│   └── Dockerfile
-│
-└── README.md
+cd OnlineArtGallery-Frontend
+npm install
+npm run dev
+```
+
+The frontend runs locally at:
+
+```text
+http://127.0.0.1:5173/
+```
+
+### Backend
+
+```bash
+cd OnlineArtGallery-Backend
+./mvnw spring-boot:run
+```
+
+On Windows PowerShell:
+
+```powershell
+cd OnlineArtGallery-Backend
+.\mvnw.cmd spring-boot:run
+```
+
+---
+
+## Frontend Design Update
+
+The latest frontend refresh keeps the existing backend/API connections unchanged and focuses only on presentation:
+
+- Light warm gallery theme instead of the older heavy dark/gold style
+- Redesigned navbar logo and navigation states
+- Cleaner artwork cards and artwork detail modal
+- Improved form styling across login, signup, contact, profile, and artwork upload pages
+- Updated dashboard/card styling for a more consistent visual system
+- Fresh screenshots saved in `OnlineArtGallery-Frontend/public/`
+
+---
+
+## Build
+
+```bash
+cd OnlineArtGallery-Frontend
+npm run build
+```
+
+The current frontend build completes successfully.
+
+---
+
+## Author
+
+Built by **Shaik Sadik**.

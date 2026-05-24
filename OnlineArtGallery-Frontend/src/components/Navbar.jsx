@@ -16,7 +16,11 @@ const Navbar = () => {
     <nav className="navbar navbar-expand-lg navbar-dark">
       <div className="container">
         <Link className="navbar-brand" to="/">
-          🎨 Online Art Gallery
+          <span className="brand-mark" aria-hidden="true">O</span>
+          <span className="brand-text">
+            <span>Online Art</span>
+            <span>Gallery</span>
+          </span>
         </Link>
 
         <button
@@ -32,7 +36,7 @@ const Navbar = () => {
         </button>
 
         <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
-          <ul className="navbar-nav">
+          <ul className="navbar-nav align-items-lg-center">
             <li className="nav-item">
               <NavLink to="/" className="nav-link">
                 Home
@@ -51,7 +55,7 @@ const Navbar = () => {
             {user?.isArtist && (
               <li className="nav-item">
                 <NavLink to="/artist-dashboard/add" className="nav-link">
-                  Add-Artworks
+                  Add Artwork
                 </NavLink>
               </li>
             )}
@@ -91,7 +95,7 @@ const Navbar = () => {
                   </NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink to="/signup" className="nav-link">
+                  <NavLink to="/signup" className="nav-link signup-link">
                     Signup
                   </NavLink>
                 </li>

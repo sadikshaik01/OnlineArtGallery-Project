@@ -1,92 +1,68 @@
-/* ==========================================
-   Add Artwork Page – Black & Gold Theme
-   (Matches Auth Pages, Minimal Premium Look)
-========================================== */
-
-:root {
-  --bg-dark: #0d0d0d;
-  --card-dark: #1a1a1a;
-  --muted: #aaa;
-  --gold: #ffd700;
-}
-
-/* Page Layout */
 .form-page {
   min-height: calc(100vh - 70px);
-  background: linear-gradient(135deg, var(--bg-dark), #121212);
+  background: var(--bg-primary);
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding-top: 40px;
-  box-sizing: border-box;
+  padding: clamp(2rem, 6vw, 4rem) 1rem;
 }
 
-/* Form Card */
 .art-form {
-  background: var(--card-dark);
+  background: var(--bg-elevated);
   width: 100%;
-  max-width: 400px;
-  padding: 26px;
-  border-radius: 18px;
-  border-top: 3px solid var(--gold); /* ✨ gold glow on top */
-  box-shadow: 0 0 25px rgba(255, 215, 0, 0.08);
-  animation: fadeIn 0.8s ease forwards;
-  transition: all 0.3s ease;
-  position: relative;
+  max-width: 460px;
+  padding: 2rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: 0 18px 45px rgba(42, 31, 21, 0.1);
 }
 
-/* Page Title */
 .page-title {
   text-align: center;
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--gold);
-  margin-bottom: 20px;
-  text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+  font-size: 1.75rem;
+  color: var(--text-primary);
+  margin-bottom: 1.4rem;
 }
 
-/* Input Groups */
 .input-group {
-  margin-bottom: 14px;
+  margin-bottom: 1rem;
   display: flex;
   flex-direction: column;
 }
 
 .input-group label {
-  color: #ccc;
-  font-size: 13px;
-  margin-bottom: 6px;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 0.45rem;
 }
 
-/* Unified Inputs */
 .art-form input[type="text"],
 .art-form input[type="number"],
 .art-form textarea {
   width: 100%;
-  padding: 10px 14px;
-  border-radius: 25px;
-  background: #0d0d0d;
-  border: 1px solid #333;
-  color: #fff;
-  font-size: 14px;
-  transition: all 0.3s ease;
+  padding: 0.8rem 0.95rem;
+  border-radius: var(--radius);
+  background: #fff;
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  font-size: 0.95rem;
 }
 
 .art-form textarea {
   resize: vertical;
-  min-height: 90px;
+  min-height: 105px;
 }
 
 .art-form input:focus,
 .art-form textarea:focus {
   outline: none;
-  border-color: var(--gold);
-  box-shadow: 0 0 8px rgba(255, 215, 0, 0.25);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(155, 92, 46, 0.12);
 }
 
-/* Image Upload Section */
 .image-upload {
-  margin-bottom: 16px;
+  margin-bottom: 1rem;
 }
 
 .upload-label {
@@ -94,86 +70,51 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 18px;
-  border-radius: 14px;
-  border: 1px dashed rgba(255, 215, 0, 0.2);
-  background: rgba(255, 255, 255, 0.03);
-  color: #ccc;
+  padding: 1.25rem;
+  border-radius: var(--radius);
+  border: 1px dashed #c7aa91;
+  background: var(--bg-soft);
+  color: var(--text-secondary);
   cursor: pointer;
-  transition: all 0.3s ease;
 }
 
 .upload-label:hover {
-  border-color: rgba(255, 215, 0, 0.4);
-  box-shadow: 0 0 15px rgba(255, 215, 0, 0.05);
-  transform: translateY(-2px);
+  border-color: var(--accent);
 }
 
 .upload-text {
-  font-weight: 600;
-  color: #fff;
-  font-size: 14px;
+  font-weight: 800;
+  color: var(--text-primary);
 }
 
 .upload-hint {
-  font-size: 12px;
-  color: var(--muted);
+  font-size: 0.82rem;
 }
 
 .preview-wrap {
   display: flex;
   justify-content: center;
-  margin-top: 10px;
+  margin-top: 0.85rem;
 }
 
 .preview-img {
   width: 100%;
   max-height: 240px;
   object-fit: contain;
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
 }
 
-/* Gold Button */
 .gold-btn {
   width: 100%;
-  padding: 11px;
-  background: linear-gradient(135deg, var(--gold), #cdaa00);
-  color: #0d0d0d;
+  padding: 0.85rem 1rem;
+  background: var(--text-primary);
+  color: #fff;
   border: none;
-  border-radius: 25px;
-  font-weight: 700;
-  font-size: 15px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 18px rgba(255, 215, 0, 0.2);
-  margin-top: 8px;
+  border-radius: 999px;
+  font-weight: 800;
 }
 
 .gold-btn:hover {
-  transform: scale(1.03);
-  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
-}
-
-/* Subtle Animation */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Responsive */
-@media (max-width: 576px) {
-  .art-form {
-    padding: 20px;
-    max-width: 90%;
-  }
-  .page-title {
-    font-size: 20px;
-  }
+  background: var(--accent);
 }

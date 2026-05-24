@@ -7,10 +7,9 @@ import { buyArtwork } from "../utils/payment";
 import { isLoggedIn } from "../utils/auth";
 import "../styles/Artworks.css";
 
-// Permanent featured artworks that are always visible
 const FEATURED_ARTWORKS = [
   {
-    id: 'featured-1',
+    id: "featured-1",
     title: "Dance of Colors",
     artist: "Maya Patel",
     price: 2500,
@@ -19,25 +18,25 @@ const FEATURED_ARTWORKS = [
     featured: true
   },
   {
-    id: 'featured-1',
-    title: "beauty of sunset",
+    id: "featured-2",
+    title: "Beauty of Sunset",
     artist: "Maya Patel",
     price: 2500,
     image: "https://images.unsplash.com/photo-1495567720989-cebdbdd97913?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=500&w=500",
-    description: "A vibrant abstract piece exploring the harmony of colors in motion.",
+    description: "A warm landscape study inspired by the quiet colors of dusk.",
     featured: true
   },
   {
-    id: 'featured-2',
-    title: "Mountain bueaty",
+    id: "featured-3",
+    title: "Mountain Beauty",
     artist: "Raj Kumar",
     price: 3200,
     image: "https://images.unsplash.com/photo-1511765224389-37f0e77cf0eb?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=500&w=500",
-    description: "A contemporary interpretation of city life through geometric patterns.",
+    description: "A contemporary interpretation of nature through crisp composition.",
     featured: true
   },
   {
-    id: 'featured-3',
+    id: "featured-4",
     title: "Serenity Garden",
     artist: "Priya Singh",
     price: 2800,
@@ -54,48 +53,38 @@ export default function Artworks() {
   const { getAllArtworks, purchaseArtwork } = useArt();
   const { addPurchase } = usePurchase();
   const dynamicArtworks = getAllArtworks();
-  // Combine featured and dynamic artworks, ensuring no duplicates by ID
-  const artworks = [...FEATURED_ARTWORKS, ...dynamicArtworks.filter(art => 
+  const artworks = [...FEATURED_ARTWORKS, ...dynamicArtworks.filter(art =>
     !FEATURED_ARTWORKS.some(featured => featured.id === art.id)
   )];
 
-  // 🔐 Function to handle protected actions (View/Buy) with login check
   const handleProtectedAction = (action, actionName = "view or buy") => {
-    // Check if user is logged in
     if (!isLoggedIn()) {
       alert(`Please login to ${actionName} this artwork.`);
-      navigate('/login');
+      navigate("/login");
       return;
     }
-    // Execute the action if logged in
     action();
   };
 
-  // 🔐 Function to handle viewing artwork details
   const handleViewArtwork = (art) => {
     handleProtectedAction(() => {
       setSelectedArt(art);
     }, "view");
   };
 
-  // 🔐 Function to handle purchase with login check
   const handlePurchase = async (art) => {
-    // Check if user is logged in
     if (!isLoggedIn()) {
-      alert('Please login to continue your purchase.');
-      navigate('/login');
+      alert("Please login to continue your purchase.");
+      navigate("/login");
       return;
     }
 
-    // Proceed with payment
     const currentUser = user;
     const handleSuccess = ({ response }) => {
-      // On success, save order locally via ArtContext
       purchaseArtwork(art.id, 1);
 
-      // Build purchase record per spec and add via PurchaseContext
       const purchaseObj = {
-        userEmail: user?.email || 'guest@example.com',
+        userEmail: user?.email || "guest@example.com",
         purchasedAt: new Date().toISOString(),
         payment: {
           orderId: response.razorpay_order_id,
@@ -112,13 +101,13 @@ export default function Artworks() {
         }
       };
       addPurchase(purchaseObj);
-      alert('Payment successful and recorded (demo).');
+      alert("Payment successful and recorded (demo).");
       if (selectedArt) setSelectedArt(null);
     };
 
     const handleError = (err) => {
-      console.error('Payment error', err);
-      alert('Payment failed: ' + (err?.message || 'Unknown error'));
+      console.error("Payment error", err);
+      alert("Payment failed: " + (err?.message || "Unknown error"));
     };
 
     buyArtwork({ art, user: currentUser, onSuccess: handleSuccess, onError: handleError });
@@ -126,15 +115,20 @@ export default function Artworks() {
 
   return (
     <div className="artworks-page">
-      <h2 className="text-center mb-4">Artworks</h2>
+      <header className="artworks-header">
+        <span>Featured collection</span>
+        <h2>Explore Artworks</h2>
+        <p>Fresh, expressive pieces from the gallery and artist uploads.</p>
+      </header>
+
       <div className="artworks-grid">
         {artworks.map((art) => (
           <div key={art.id} className="artwork-card">
             <div className="artwork-img-wrap">
               <img src={art.image} alt={art.title} />
               <div className="artwork-overlay">
-                <button 
-                  className="btn-view" 
+                <button
+                  className="btn-view"
                   onClick={() => handleViewArtwork(art)}
                   title={!isLoggedIn() ? "Login required to view details" : "View artwork details"}
                 >
@@ -152,28 +146,27 @@ export default function Artworks() {
             <div className="artwork-card-content">
               <h5>{art.title}</h5>
               <p>By {art.artist}</p>
-              <p className="artwork-price">₹{art.price}</p>
+              <p className="artwork-price">&#8377;{art.price}</p>
             </div>
           </div>
         ))}
       </div>
 
-      {/* ===== Modal Popup ===== */}
-      {/* 🔐 Double-check: Only render modal if user is logged in AND artwork is selected */}
       {selectedArt && isLoggedIn() && (
         <div className="art-modal-backdrop" onClick={() => setSelectedArt(null)}>
           <div className="art-modal" onClick={(e) => e.stopPropagation()}>
             <button className="art-modal-close" onClick={() => setSelectedArt(null)}>
-              ×
+              &times;
             </button>
             <div className="art-modal-image">
               <img src={selectedArt.image} alt={selectedArt.title} />
             </div>
             <div className="art-modal-details">
+              <span className="modal-kicker">Artwork details</span>
               <h3>{selectedArt.title}</h3>
               <p className="artist">By {selectedArt.artist}</p>
               <p className="description">{selectedArt.description}</p>
-              <p className="price">Price: ₹{selectedArt.price}</p>
+              <p className="price">Price: &#8377;{selectedArt.price}</p>
               <button
                 className="gold-btn"
                 onClick={() => handlePurchase(selectedArt)}

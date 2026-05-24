@@ -13,7 +13,7 @@ export default function Contact() {
 
   const validateForm = () => {
     const newErrors = {};
-    
+
     if (!formData.name.trim()) {
       newErrors.name = "Name is required";
     }
@@ -41,20 +41,16 @@ export default function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
-      // In a real app, this would be an API call
       console.log("Form submitted:", formData);
-      
-      // Show success notification
+
       setNotification({
         show: true,
         type: "success",
         message: "Thank you for your message! We'll get back to you soon.",
       });
 
-      // Reset form
       setFormData({ name: "", email: "", subject: "", message: "" });
-      
-      // Hide notification after 5 seconds
+
       setTimeout(() => {
         setNotification({ show: false, type: "", message: "" });
       }, 5000);
@@ -64,7 +60,6 @@ export default function Contact() {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
-    // Clear error when user starts typing
     if (errors[name]) {
       setErrors(prev => ({ ...prev, [name]: "" }));
     }
@@ -74,6 +69,7 @@ export default function Contact() {
     <div className="contact-container">
       <div className="contact-wrapper">
         <div className="contact-card">
+          <span className="contact-kicker">Contact</span>
           <h2 className="contact-title">Get in Touch</h2>
           {notification.show && (
             <div className={`notification ${notification.type}`}>
@@ -172,15 +168,15 @@ export default function Contact() {
 
           <div className="contact-info">
             <div className="info-item">
-              <span className="info-icon">📍</span>
+              <span className="info-icon" aria-hidden="true">LOC</span>
               <p>123 Gallery Street, Art City, AC 12345</p>
             </div>
             <div className="info-item">
-              <span className="info-icon">📧</span>
+              <span className="info-icon" aria-hidden="true">@</span>
               <p>contact@onlineartgallery.com</p>
             </div>
             <div className="info-item">
-              <span className="info-icon">📞</span>
+              <span className="info-icon" aria-hidden="true">TEL</span>
               <p>1-800-ART-HELP</p>
             </div>
           </div>
